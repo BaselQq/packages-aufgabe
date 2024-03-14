@@ -49,4 +49,10 @@ public class Book {
                 '}';
     }
 
+    public Book(String title, String author, int isbn, int pages) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.pages = pages;
+    }
 }

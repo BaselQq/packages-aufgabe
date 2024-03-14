@@ -4,18 +4,7 @@ import java.util.Arrays;
 
 public class Library {
 
-    String libraryName;
-    int LibraryId;
-
-    Book[] books;
-
-    public String getLibraryName() {
-        return libraryName;
-    }
-
-    public void setLibraryName(String libraryName) {
-        this.libraryName = libraryName;
-    }
+    private Book[] books;
 
     public Book[] getBooks() {
         return books;
@@ -25,24 +14,20 @@ public class Library {
         this.books = books;
     }
 
-    public int getLibraryId() {
-        return LibraryId;
-    }
-
-    public void setLibraryId(int libraryId) {
-        LibraryId = libraryId;
+    public void removeBooks() {
+        this.books = null;
     }
 
     @Override
     public String toString() {
         return "Library{" +
-                "libraryName='" + libraryName + '\'' +
-                ", LibraryId=" + LibraryId +
-                ", books=" + Arrays.toString(books) +
+                "books=" + Arrays.toString(books) +
                 '}';
     }
 
-    public void removeBooks() {
-        this.books = null;
+    public void addBook(Book book) {
+        Book[] newBooks = Arrays.copyOf(books,books.length+1);
+        newBooks[newBooks.length-1] = book;
+        books = newBooks;
     }
 }
