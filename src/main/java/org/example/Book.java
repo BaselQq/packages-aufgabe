@@ -38,4 +38,15 @@ public class Book {
     public void setPages(int pages) {
         this.pages = pages;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn=" + isbn +
+                ", pages=" + pages +
+                '}';
+    }
+
 }
